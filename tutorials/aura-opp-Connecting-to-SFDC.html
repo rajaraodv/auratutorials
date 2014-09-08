@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Opportunity Select App - Connecting to SFDC | Aura Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://github.com/rajaraodv/auratutorials-site/tutorials/aura-opp-Connecting-to-SFDC.html">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/auratutorials/mstile-144x144.png">
+  <link rel="stylesheet" href="/auratutorials/css/style.css" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/auratutorials/atom.xml" title="Aura Tutorials" type="application/atom+xml">
+  <meta name="description" content="Code Reuse
+One of the nice things about Aura is that you can reuse most of your Apex and Visualforce skills while build Aura apps. This Apex Model is apated from a Visualforce example. Let’s create an">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Opportunity Select App - Connecting to SFDC">
+<meta property="og:url" content="https://github.com/rajaraodv/auratutorials-site/auratutorials/tutorials/aura-opp-Connecting-to-SFDC.html">
+<meta property="og:site_name" content="Aura Tutorials">
+<meta property="og:description" content="Code Reuse
+One of the nice things about Aura is that you can reuse most of your Apex and Visualforce skills while build Aura apps. This Apex Model is apated from a Visualforce example. Let’s create an">
+<meta property="og:image" content="/auratutorials/images/aura-opp-create-opp-list-model.png">
+<meta property="og:image" content="/auratutorials/images/aura-opp-create-opp-list-devconsole-ac.png">
+<meta property="og:image" content="/auratutorials/images/aura-opp-create-opp-list-open-comp.png">
+<meta property="og:image" content="/auratutorials/images/aura-opp-create-opp-list-createApp.png">
+<meta property="og:image" content="/auratutorials/images/aura-opp-opplist-select-list.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Opportunity Select App - Connecting to SFDC">
+<meta name="twitter:description" content="Code Reuse
+One of the nice things about Aura is that you can reuse most of your Apex and Visualforce skills while build Aura apps. This Apex Model is apated from a Visualforce example. Let’s create an">
+<meta name="twitter:site" content="@rajaraodv">
+<meta property="fb:admins" content="100000247608790">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4910098-10', 'github.com/rajaraodv/auratutorials-site');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <header id="header">
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/auratutorials//" id="logo">Aura Tutorials</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/" class="main-nav-link">Tutorials</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/aura-docs.html" class="main-nav-link">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/aura-cheat-sheet.html" class="main-nav-link">Cheat Sheet</a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        <h1 id="page-title" itemprop="name">Opportunity Select App - Connecting to SFDC</h1>
+        <a href="https://github.com/rajaraodv/auratutorials-site/blob/master/source/tutorials/aura-opp-Connecting-to-SFDC.md" title="Improve this doc" id="page-edit-link"></a>
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Code_Reuse"><span class="toc-number">1.</span> <span class="toc-text">Code Reuse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#@auraEnabled_annotation"><span class="toc-number">2.</span> <span class="toc-text">@auraEnabled annotation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#opportunity_Component"><span class="toc-number">3.</span> <span class="toc-text">opportunity Component</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Component_Markup"><span class="toc-number">3.1.</span> <span class="toc-text">Component Markup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_A_Controller"><span class="toc-number">3.2.</span> <span class="toc-text">Create A Controller</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Create_a_Helper"><span class="toc-number">4.</span> <span class="toc-text">Create a Helper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Embed_it_in_an_App"><span class="toc-number">5.</span> <span class="toc-text">Embed it in an App</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test_the_app"><span class="toc-number">6.</span> <span class="toc-text">Test the app</span></a></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <h2 id="Code_Reuse">Code Reuse</h2>
+<p>One of the nice things about Aura is that you can reuse most of your Apex and Visualforce skills while build Aura apps. This Apex Model is apated from a Visualforce example. Let’s create an Apex Model that returns list of Opportunities from SFDC.</p>
+<ol>
+<li>Select File &gt; New &gt; Apex Class</li>
+<li>Enter OpportunityListModel for the class name</li>
+<li>Click OK to create the class</li>
+</ol>
+<p><img src="/auratutorials/images/aura-opp-create-opp-list-model.png"></p>
+<h2 id="@auraEnabled_annotation">@auraEnabled annotation</h2>
+<p>Edit the model and add the following code. <code>@AuraEnabled</code> annotation makes the <code>getOpportunities</code> method visible to Aura components and is automatically loaded by components.</p>
+<figure class="highlight java"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OpportunityListModel</span> </span>{</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> List&lt;Opportunity&gt; opportunities;</div><div class="line">    </div><div class="line">    <span class="keyword">public</span> <span class="title">OpportunityListModel</span>() {</div><div class="line">        init();</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title">init</span>() {</div><div class="line">        opportunities = (List&lt;Opportunity&gt;) setCon.getRecords();</div><div class="line">    }    </div><div class="line">    </div><div class="line">    <span class="keyword">public</span> ApexPages.StandardSetController setCon {</div><div class="line">        get {</div><div class="line">            <span class="keyword">if</span>(setCon == <span class="keyword">null</span>) {</div><div class="line">                setCon = <span class="keyword">new</span> ApexPages.StandardSetController(Database.getQueryLocator(</div><div class="line">                    [SELECT Id, Name, CloseDate FROM Opportunity]));</div><div class="line">            }</div><div class="line">            <span class="keyword">return</span> setCon;</div><div class="line">        }</div><div class="line">        set;</div><div class="line">    }</div><div class="line">    </div><div class="line">    <span class="annotation">@AuraEnabled</span></div><div class="line">    <span class="keyword">public</span> List&lt;Opportunity&gt; <span class="title">getOpportunities</span>() {</div><div class="line">        <span class="keyword">return</span> opportunities;</div><div class="line">    }    </div><div class="line">}</div></pre></figure>
+
+<h2 id="opportunity_Component">opportunity Component</h2>
+<p>Create a component called <code>opportunitySelect</code>. This component will connect to SFDC and get list of opportunities via <code>OpportunityListModel</code>. Once it retrieves the list, it displays them in a drop-down list. And when a user selects an Opportunity from the list, it will fire an Aura event. </p>
+<ol>
+<li>Select File &gt; New &gt; Aura Component</li>
+<li>Enter opportunitySelect for the name</li>
+<li>Click Submit</li>
+</ol>
+<p><img src="/auratutorials/images/aura-opp-create-opp-list-devconsole-ac.png"></p>
+<h3 id="Component_Markup">Component Markup</h3>
+<p>Add the following markup to <code>opportunitySelect</code> component. Make sure to change the namespace to your Org’s namespace.</p>
+<figure class="highlight html"><pre><div class="line"><span class="tag">&lt;<span class="title">aura:component</span> <span class="attribute">model</span>=<span class="value">"NAMESPACE.OpportunityListModel"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">aura:handler</span> <span class="attribute">name</span>=<span class="value">"init"</span> <span class="attribute">value</span>=<span class="value">"{!this}"</span> <span class="attribute">action</span>=<span class="value">"{!c.doInit}"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">select</span> <span class="attribute">aura:id</span>=<span class="value">"opportunitySelect"</span> <span class="attribute">onchange</span>=<span class="value">"{!c.onSelectOpportunity}"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">aura:component</span>&gt;</span></div></pre></figure>
+
+<p>Let’s take a look at what’s going on line by line.</p>
+<ol>
+<li><p><code>&lt;aura:component model=”NAMESPACE.OpportunityListModel”&gt;</code><br>Makes this component connect to <code>OpportunityListModel</code> on the server.</p>
+</li>
+<li><p><code>&lt;aura:handler name=”getOpportunities” value=”{!this}” action=”{!c.doInit}”/&gt;</code><br>When Aura loads a component, Aura fires an <code>init</code> event for components to initialize business logic (in JavaScript controllers). <code>aura:handler</code> component provides a way to listen to such events(<code>init</code>), pass some info to events publishers (<code>{!this}</code>) and call a controller function (<code>{!c.c.doInit}</code>) to do something.</p>
+</li>
+<li><p><code>&lt;select aura:id=&quot;opportunitySelect&quot; onchange=&quot;{!c.onSelectOpportunity}&quot;/&gt;</code><br>This is a standard HTML Select tag whose id is <code>aura:id</code> (unique component namespaced id). It listens to <code>onchange</code> and calls <code>onSelectOpportunity</code> function in the client-side controller.</p>
+</li>
+</ol>
+<blockquote class="note info"><strong class="note-title">HTML tags  = Aura Component</strong>
+
+<p>Aura treats regular HTML tags also as Aura components and adds all the component features to them as well!</p>
+</blockquote>
+
+
+<h3 id="Create_A_Controller">Create A Controller</h3>
+<p>Javascript Controllers act like a middleman between Views (component markups) and Models (Apex Models).  Every function in JS controller gets three parameters.</p>
+<ol>
+<li><code>component</code> - The component it belongs to</li>
+<li><code>Event</code> - The event that triggered the call.</li>
+<li><code>helper</code> - A JS object that holds functions that can be reused (if there are multiple copies of the component). </li>
+</ol>
+<blockquote class="note info"><strong class="note-title">Controller Vs. Helper</strong>
+
+<p>Think of functions inside JS controller as “instance methods” and think of functions inside JS Helper as “Static methods”.<br>Tip: If your function doesn’t interact directly with the View, put it in Helper.</p>
+</blockquote>
+
+
+<p>Add a component controller that deals with <code>init</code> event from Aura and also handles <code>onchange</code> event when a user select an opportunity from the list.</p>
+<ol>
+<li>Open <code>opportunitySelect.cmp</code> and click on CONTROLLER on the side panel.<br><img src="/auratutorials/images/aura-opp-create-opp-list-open-comp.png"></li>
+<li>Copy paste the below code into the controller.</li>
+</ol>
+<figure class="highlight JavaScript"><pre><div class="line">({</div><div class="line">    doInit: <span class="function"><span class="keyword">function</span><span class="params">(component, evt, helper)</span> </span>{</div><div class="line">        setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">            <span class="keyword">var</span> items = component.getValue(<span class="string">"m.opportunities"</span>).unwrap();</div><div class="line">            <span class="keyword">var</span> select = component.find(<span class="string">"opportunitySelect"</span>).getElement();</div><div class="line">            <span class="keyword">var</span> option = <span class="literal">null</span>;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; items.length; i++) {</div><div class="line">                item = items[i];</div><div class="line">                option = <span class="built_in">document</span>.createElement(<span class="string">"option"</span>);</div><div class="line">                option.textContent = items[i].Name;</div><div class="line">                option.value = items[i].Id;</div><div class="line">                select.appendChild(option);</div><div class="line">            }</div><div class="line">            helper.fireSelectOpportunity(items[<span class="number">0</span>].Id);</div><div class="line">        }, <span class="number">10</span>);</div><div class="line">    },</div><div class="line">    </div><div class="line">    onSelectOpportunity : <span class="function"><span class="keyword">function</span><span class="params">(component, event, helper)</span> </span>{</div><div class="line">        <span class="keyword">var</span> select = component.find(<span class="string">"opportunitySelect"</span>).getElement();</div><div class="line">        <span class="keyword">var</span> value = select.value;</div><div class="line">        helper.fireSelectOpportunity(value);</div><div class="line">    }</div><div class="line">})</div></pre></figure>
+
+<p>Let’s take a look at the code.</p>
+<ol>
+<li><p><b>doInit: function(component, evt, helper) {</b><br>Remember we had <code>&lt;aura:handler name=”getOpportunities” value=”{!this}” action=”{!c.doInit}”/&gt;</code> in our View markup? Because of that doInit is called when the component receives <code>init</code> event from Aura. </p>
+</li>
+<li><p><b>var items = component.getValue(“m.opportunities”).unwrap();</b><br><b>component.getValue</b> is a way to get values from either models or views. Use <code>m.</code> prefix to get values from <b>server</b> models and use <code>v.</code> prefix to get value from views. As you can imagine <code>component.getValue(&quot;m.opportunities&quot;).unwrap()</code> simply returns list of opportunities.</p>
+</li>
+</ol>
+<figure class="highlight html"><pre><div class="line">For example:</div><div class="line">1. `component.getValue("v.myInputfieldValue")` - Gets value from an input field.</div><div class="line">2. `component.getValue("m.getContacts")` - Gets value from SFDC, if the server has `contacts` method (with a lowercase "c"). You'll also need to call `unwrap` to convert it to JSON.</div></pre></figure>
+
+<ol>
+<li><b>for (var i = 0; i &lt; items.length; i++) {</b><br>Once it gets the list of opportunities, it simply populates the list.</li>
+<li><b>helper.fireSelectOpportunity(items[0].Id);</b><br>Calls a helper function <code>fireSelectOpportunity</code> that internally fires an event indicating that the first item was selected.</li>
+</ol>
+<h2 id="Create_a_Helper">Create a Helper</h2>
+<p>Create a helper by clicking on the side panel and add the following code. <b> Remember to change namespace</b>.</p>
+<figure class="highlight JavaScript"><pre><div class="line">({</div><div class="line">    fireSelectOpportunity : <span class="function"><span class="keyword">function</span><span class="params">(id)</span> </span>{</div><div class="line">        <span class="keyword">var</span> selectOpportunityEvent = $A.get(<span class="string">"e.NAMESPACE:selectOpportunity"</span>);</div><div class="line">        selectOpportunityEvent.setParams({id: id});</div><div class="line">        selectOpportunityEvent.fire();    		</div><div class="line">    }</div><div class="line">})</div></pre></figure>
+
+<p>Let’s look at the code:</p>
+<ol>
+<li><p><b>var selectOpportunityEvent = $A.get(“e.NAMESPACE:selectOpportunity”);</b><br><code>$A</code> returns a global Aura object that provides various Aura functions like<code>$A.get</code> that allows retrieving an artifact by name string.  <code>$A.get(&quot;e.NAMESPACE:selectOpportunity&quot;)</code> returns an event (<code>e.</code> prefix) in your namespace with name <code>selectOpportunity</code>.</p>
+</li>
+<li><p><b>selectOpportunityEvent.setParams({id: id})</b><br>Events allows us to pass data. In this case we are setting Opportunity Id.</p>
+</li>
+<li><p><b>selectOpportunityEvent.fire()</b><br>You can then finally fire the event and if anyone who may be listening to it will get the data.</p>
+</li>
+</ol>
+<h2 id="Embed_it_in_an_App">Embed it in an App</h2>
+<p>Create an app called <code>opportunities.app</code> and embed this component in it.</p>
+<p><img src="/auratutorials/images/aura-opp-create-opp-list-createApp.png"></p>
+<p>Add the following code to the app and <b>Change the namespace to your org’s namespace</b></p>
+<figure class="highlight html"><pre><div class="line"><span class="tag">&lt;<span class="title">aura:application</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">NAMESPACE:opportunitySelect</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">aura:application</span>&gt;</span></div></pre></figure>
+
+<h2 id="Test_the_app">Test the app</h2>
+<p>Click on the <code>Preview</code> button in the side bar of the Developer console or go to: <code>&lt;your org&gt;/&lt;namespace&gt;/opportunities.app</code> in a browser.</p>
+<p><img src="/auratutorials/images/aura-opp-opplist-select-list.png"></p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2014-09-02T05:16:27.000Z" itemprop="dateModified">Last updated: Sep 1 2014</time>
+        <a href="aura-opp-select-overview.html" id="page-footer-prev" title="Overview">Prev</a><a href="aura-opp-events.html" id="page-footer-next" title="Creating Events">Next</a>
+      </footer>
+      
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+    </div>
+    <aside id="sidebar">
+  
+    <strong class="sidebar-title">Intro to Aura</strong>
+    
+      <a href="/auratutorials/tutorials/index.html" class="sidebar-link">What is Aura</a>
+    
+      <a href="/auratutorials/tutorials/aura-setup.html" class="sidebar-link">Setup</a>
+    
+      <a href="/auratutorials/tutorials/aura-in-org-reference.html" class="sidebar-link">In-Org Reference App</a>
+    
+  
+    <strong class="sidebar-title">Hello World App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-base-app.html" class="sidebar-link">Create The App</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-creating-a-component.html" class="sidebar-link">Create The Component</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-embed-in-s1.html" class="sidebar-link">Running In Salesforce1 Mobile</a>
+    
+  
+    <strong class="sidebar-title">Opportunity Select App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-opp-select-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-Connecting-to-SFDC.html" class="sidebar-link current">Connecting to SFDC</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-events.html" class="sidebar-link">Creating Events</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-listening-to-events.html" class="sidebar-link">Handling Events</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-styles.html" class="sidebar-link">Adding Styles</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-embed-in-s1.html" class="sidebar-link">Running In Salesforce1 Mobile</a>
+    
+  
+    <strong class="sidebar-title">Static Resources App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-load-resources.html" class="sidebar-link">Load Dependent Files</a>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-build-the-app.html" class="sidebar-link">Build The App</a>
+    
+  
+    <strong class="sidebar-title">Expense Tracker App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-et-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-appmap.html" class="sidebar-link">App Map</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-expense-object.html" class="sidebar-link">Create An Expense Object</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-1-create-app.html" class="sidebar-link">Create Expense Tracker App</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-2-create-user-input-comp.html" class="sidebar-link">Create User Input Component</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-3-create-apex-expense-model.html" class="sidebar-link">Load Data From Apex Model</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-4-create-nested-components.html" class="sidebar-link">Create Nested Components</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-5-save-expense-to-sfdc.html" class="sidebar-link">Save Expense To SFDC</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-6-make-it-interactive.html" class="sidebar-link">Make It Interactive</a>
+    
+  
+    <strong class="sidebar-title">Mini Hacks</strong>
+    
+      <a href="/auratutorials/tutorials/aura-mini-hacks-temp-converter.html" class="sidebar-link">Temperature Converter</a>
+    
+      <a href="/auratutorials/tutorials/aura-mini-hacks-contacts-context-app.html" class="sidebar-link">Contact Context App</a>
+    
+  
+    <strong class="sidebar-title">Resources</strong>
+    
+      <a href="/auratutorials/tutorials/aura-docs.html" class="sidebar-link">Docs</a>
+    
+      <a href="/auratutorials/tutorials/aura-cheet-sheet.html" class="sidebar-link">Cheet Sheet</a>
+    
+  
+</aside>
+  </div>
+</article>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+       Built using <a href="http://hexo.io" target="_blank">hexo.io</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Site <a href="/tutorials/aura-site-credit.html"> credits</a>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/rajaraodv" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/rajaraodv/auratutorials-site" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+<!-- Swiftype -->
+<script>
+var Swiftype = window.Swiftype || {};
+(function() {
+  Swiftype.key = 'DDvzs7LQ9kdKssQNQLcv';
+
+  /** DO NOT EDIT BELOW THIS LINE **/
+  var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+  script.src = "//s.swiftypecdn.com/embed.js";
+  var entry = document.getElementsByTagName('script')[0];
+  document.getElementsByTagName('script')[0].parentNode.insertBefore(script, entry);
+}());
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/auratutorials/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/auratutorials/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

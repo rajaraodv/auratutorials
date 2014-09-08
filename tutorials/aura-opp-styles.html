@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Opportunity Select App - Adding Styles | Aura Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://github.com/rajaraodv/auratutorials-site/tutorials/aura-opp-styles.html">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/auratutorials/mstile-144x144.png">
+  <link rel="stylesheet" href="/auratutorials/css/style.css" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/auratutorials/atom.xml" title="Aura Tutorials" type="application/atom+xml">
+  <meta name="description" content="By default components don’t come with any CSS styles because the general idea is that every component should come with it’s own style. Let’s add styles to opportunityCard.cmp, then opportunitySelect.c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Opportunity Select App - Adding Styles">
+<meta property="og:url" content="https://github.com/rajaraodv/auratutorials-site/auratutorials/tutorials/aura-opp-styles.html">
+<meta property="og:site_name" content="Aura Tutorials">
+<meta property="og:description" content="By default components don’t come with any CSS styles because the general idea is that every component should come with it’s own style. Let’s add styles to opportunityCard.cmp, then opportunitySelect.c">
+<meta property="og:image" content="/auratutorials/images/aura-opp-create-dev-console-create-style.png">
+<meta property="og:image" content="/auratutorials/images/aura-opp-create-dev-console-create-style.png">
+<meta property="og:image" content="/auratutorials/images/aura-opp-add-styles-final-app.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Opportunity Select App - Adding Styles">
+<meta name="twitter:description" content="By default components don’t come with any CSS styles because the general idea is that every component should come with it’s own style. Let’s add styles to opportunityCard.cmp, then opportunitySelect.c">
+<meta name="twitter:site" content="@rajaraodv">
+<meta property="fb:admins" content="100000247608790">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4910098-10', 'github.com/rajaraodv/auratutorials-site');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <header id="header">
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/auratutorials//" id="logo">Aura Tutorials</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/" class="main-nav-link">Tutorials</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/aura-docs.html" class="main-nav-link">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/aura-cheat-sheet.html" class="main-nav-link">Cheat Sheet</a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        <h1 id="page-title" itemprop="name">Opportunity Select App - Adding Styles</h1>
+        <a href="https://github.com/rajaraodv/auratutorials-site/blob/master/source/tutorials/aura-opp-styles.md" title="Improve this doc" id="page-edit-link"></a>
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#opportunityCard-cmp"><span class="toc-number">1.</span> <span class="toc-text">opportunityCard.cmp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Add_Styles"><span class="toc-number">1.1.</span> <span class="toc-text">Add Styles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update_Markup"><span class="toc-number">1.2.</span> <span class="toc-text">Update Markup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#opportunitySelect-cmp"><span class="toc-number">2.</span> <span class="toc-text">opportunitySelect.cmp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Add_Styles-1"><span class="toc-number">2.1.</span> <span class="toc-text">Add Styles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update_Markup-1"><span class="toc-number">2.2.</span> <span class="toc-text">Update Markup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#opportunities-app"><span class="toc-number">3.</span> <span class="toc-text">opportunities.app</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Add_Styles-1"><span class="toc-number">3.1.</span> <span class="toc-text">Add Styles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update_Markup-1"><span class="toc-number">3.2.</span> <span class="toc-text">Update Markup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test_The_App"><span class="toc-number">4.</span> <span class="toc-text">Test The App</span></a></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <p>By default components don’t come with any CSS styles because the general idea is that every component should come with it’s own style. Let’s add styles to <code>opportunityCard.cmp</code>, then <code>opportunitySelect.cmp</code> and finally to <code>opportunities.app</code>.</p>
+<h2 id="opportunityCard-cmp">opportunityCard.cmp</h2>
+<h3 id="Add_Styles">Add Styles</h3>
+<ol>
+<li>Open <code>opportunityCard.cmp</code> and click on the <code>Styles</code> button in the side panel of the Developer Console.<br> <img src="/auratutorials/images/aura-opp-create-dev-console-create-style.png"></li>
+<li>Copy the below CSS classes. To ensure css classes don’t clash, that every css class is namespaced with <code>.THIS</code>. At run-time <code>.THIS</code> will be replaced by a unique class name. </li>
+</ol>
+<figure class="highlight css"><pre><div class="line"><span class="class">.THIS</span><span class="class">.recordLayout</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">14px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"><span class="number">1px</span> solid <span class="hexcolor">#cfd4d9</span></span></span></div><div class="line">}</div><div class="line"></div><div class="line"><span class="class">.THIS</span><span class="class">.listRecord</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#ffffff</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">14px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cfd4d9</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.uiInputSelect</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0px</span> <span class="number">4px</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.uiOutputText</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">1.1em</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span><span class="class">.listRecord</span> <span class="tag">button</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">outline</span>:<span class="value"> <span class="number">0px</span> none</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">0px</span> none</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">background</span>:<span class="value"> transparent</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">16px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">16px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">32px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">max-height</span>:<span class="value"> <span class="number">32px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">0px</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span><span class="class">.listRecord</span> <span class="tag">button</span><span class="class">.trash</span> <span class="rules">{</span></div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span><span class="class">.listRecord</span> <span class="tag">button</span><span class="class">.lock</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">32px</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span><span class="class">.listRecord</span> <span class="tag">button</span><span class="class">.unlocked</span> <span class="rules">{</span></div><div class="line">    </div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span><span class="class">.listRecord</span> <span class="tag">button</span><span class="class">.locked</span> <span class="rules">{</span></div><div class="line">    </div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.pin</span> <span class="class">.label</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> auto</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.itemTitle</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">15px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">3px</span></span></span>; </div><div class="line">    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;        </div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.recordCell</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">1px</span> <span class="number">14px</span> <span class="number">1px</span> <span class="number">0</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">16px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">max-height</span>:<span class="value"> <span class="number">16px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.recordItem</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;        </div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.recordItem</span> <span class="class">.label</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">padding-right</span>:<span class="value"> <span class="number">14px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">125px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#696e71</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.value</span> <span class="rules">{</span></div><div class="line">    </div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.truncate</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">text-overflow</span>:<span class="value"> ellipsis</span></span>;</div><div class="line">    <span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;        </div><div class="line"><span class="rule">}</span></div></pre></figure>
+
+<blockquote class="note info"><strong class="note-title">.THIS classname</strong>
+
+<p>Note: If your markup’s <b>top level</b> element uses any CSS class it’s namespace <b>should not </b> have a space between the THIS and the css-classname like <code>.THIS.recordLayout</code>. But if any inner element use a class they should have space like <code>.THIS .myInnerElementCssClass</code></p>
+</blockquote>
+
+
+
+<h3 id="Update_Markup">Update Markup</h3>
+<p>Update the markup of opportunityCard.cmp component to include some CSS classes (<b>Remember to change the namespace</b>).</p>
+<figure class="highlight"><pre><div class="line">&lt;aura:component <span class="variable">controller=</span><span class="string">"NAMESPACE.OpportunityController"</span>&gt;</div><div class="line">    &lt;aura:handler <span class="variable">event=</span><span class="string">"NAMESPACE:selectOpportunity"</span> <span class="variable">action=</span><span class="string">"{!c.handleSelectOpportunity}"</span> /&gt;</div><div class="line">    &lt;div <span class="variable">class=</span><span class="string">"listRecord recordLayout"</span>&gt;</div><div class="line">        &lt;div <span class="variable">class=</span><span class="string">"itemTitle"</span>&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">class=</span><span class="string">"itemTitle"</span> <span class="variable">value=</span><span class="string">"{!m.Name}"</span>/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div <span class="variable">class=</span><span class="string">"recordItem"</span>&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"Account Name:"</span> <span class="variable">class=</span><span class="string">"recordCell label truncate"</span>/&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"{!m.AccountName}"</span> <span class="variable">class=</span><span class="string">"recordCell value truncate"</span>/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div <span class="variable">class=</span><span class="string">"recordItem"</span>&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"Amount:"</span> <span class="variable">class=</span><span class="string">"recordCell label truncate"</span>/&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"{!'$' + m.Amount}"</span> <span class="variable">class=</span><span class="string">"recordCell value truncate"</span>/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div <span class="variable">class=</span><span class="string">"recordItem"</span>&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"Close Date:"</span> <span class="variable">class=</span><span class="string">"recordCell label truncate"</span>/&gt;</div><div class="line">            &lt;ui:outputDate <span class="variable">value=</span><span class="string">"{!m.CloseDate}"</span> <span class="variable">class=</span><span class="string">"recordCell value truncate"</span>/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div <span class="variable">class=</span><span class="string">"recordItem"</span>&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"Stage:"</span> <span class="variable">class=</span><span class="string">"recordCell label truncate"</span>/&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"{!m.StageName}"</span> <span class="variable">class=</span><span class="string">"recordCell value truncate"</span>/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div <span class="variable">class=</span><span class="string">"recordItem"</span>&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"Opportunity Owner:"</span> <span class="variable">class=</span><span class="string">"recordCell label truncate"</span>/&gt;</div><div class="line">            &lt;ui:outputText <span class="variable">value=</span><span class="string">"{!m.OwnerName}"</span> <span class="variable">class=</span><span class="string">"recordCell value truncate"</span>/&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/aura:component&gt;</div></pre></figure>
+
+<p><br><br></p>
+<h2 id="opportunitySelect-cmp">opportunitySelect.cmp</h2>
+<p>Let’s add styles to opportunitySelect component.</p>
+<h3 id="Add_Styles-1">Add Styles</h3>
+<ol>
+<li>Open <code>opportunitySelect.cmp</code> and click on the <code>Styles</code> button in the side panel of the Developer Console.<br> <img src="/auratutorials/images/aura-opp-create-dev-console-create-style.png"></li>
+<li>Copy the below CSS classes. </li>
+</ol>
+<figure class="highlight css"><pre><div class="line"><span class="class">.THIS</span><span class="class">.controlLayout</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">14px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#ffffff</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">14px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#cfd4d9</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">white-space</span>:<span class="value"> nowrap</span></span>;</div><div class="line"><span class="rule">}</span></div></pre></figure>
+
+<h3 id="Update_Markup-1">Update Markup</h3>
+<p>Update App’s markup to use these new styles.</p>
+<figure class="highlight"><pre><div class="line">&lt;aura:<span class="type">application</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"container"</span>&gt;</div><div class="line">        &lt;<span class="keyword">div</span> aura:<span class="property">id</span>=<span class="string">"content"</span> <span class="type">class</span>=<span class="string">"center content"</span>&gt;</div><div class="line">            &lt;<span class="keyword">div</span>&gt;</div><div class="line">                &lt;aotp1:opportunitySelect/&gt;</div><div class="line">                &lt;<span class="keyword">div</span> aura:<span class="property">id</span>=<span class="string">"cards"</span>&gt;</div><div class="line">                    &lt;aotp1:opportunityCard/&gt;</div><div class="line">                &lt;/<span class="keyword">div</span>&gt;</div><div class="line">            &lt;/<span class="keyword">div</span>&gt;</div><div class="line">        &lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;/<span class="keyword">div</span>&gt;</div><div class="line">&lt;/aura:<span class="type">application</span>&gt;</div></pre></figure>
+
+<h2 id="opportunities-app">opportunities.app</h2>
+<p>Let’s also add our app’s CSS.</p>
+<h3 id="Add_Styles-1">Add Styles</h3>
+<p>Select the opportunities.app and click on Styles button and add the following css.</p>
+<figure class="highlight css"><pre><div class="line"><span class="class">.THIS</span><span class="class">.container</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10px</span> <span class="number">0px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0px</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.center</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0px</span> auto</span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"></div><div class="line"><span class="class">.THIS</span> <span class="class">.content</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">768px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#3c3d3e</span></span></span>;</div><div class="line"><span class="rule">}</span></div></pre></figure>
+
+<h3 id="Update_Markup-1">Update Markup</h3>
+<p>Update the markup of opportunitSelect.cmp component to include some CSS classes (<b>Remember to change the namespace</b>).</p>
+<figure class="highlight html"><pre><div class="line"><span class="tag">&lt;<span class="title">aura:component</span> <span class="attribute">model</span>=<span class="value">"NAMESPACE.OpportunityListModel"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">aura:handler</span> <span class="attribute">name</span>=<span class="value">"init"</span> <span class="attribute">value</span>=<span class="value">"{!this}"</span> <span class="attribute">action</span>=<span class="value">"{!c.doInit}"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"controlLayout"</span>&gt;</span>       </div><div class="line">        <span class="tag">&lt;<span class="title">ui:outputText</span> <span class="attribute">value</span>=<span class="value">"Opportunity:"</span> <span class="attribute">class</span>=<span class="value">"truncate"</span>/&gt;</span>    </div><div class="line">        <span class="tag">&lt;<span class="title">select</span> <span class="attribute">aura:id</span>=<span class="value">"opportunitySelect"</span> <span class="attribute">onchange</span>=<span class="value">"{!c.onSelectOpportunity}"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">aura:component</span>&gt;</span></div></pre></figure>
+
+<h2 id="Test_The_App">Test The App</h2>
+<p>Click on the <code>Preview</code> button in the side bar of the Developer console or go to: <code>&lt;your org&gt;/&lt;namespace&gt;/opportunities.app</code> in a browser.</p>
+<p><img src="/auratutorials/images/aura-opp-add-styles-final-app.png"></p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2014-09-02T05:16:27.000Z" itemprop="dateModified">Last updated: Sep 1 2014</time>
+        <a href="aura-opp-listening-to-events.html" id="page-footer-prev" title="Handling Events">Prev</a><a href="aura-opp-embed-in-s1.html" id="page-footer-next" title="Running In Salesforce1 Mobile">Next</a>
+      </footer>
+      
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+    </div>
+    <aside id="sidebar">
+  
+    <strong class="sidebar-title">Intro to Aura</strong>
+    
+      <a href="/auratutorials/tutorials/index.html" class="sidebar-link">What is Aura</a>
+    
+      <a href="/auratutorials/tutorials/aura-setup.html" class="sidebar-link">Setup</a>
+    
+      <a href="/auratutorials/tutorials/aura-in-org-reference.html" class="sidebar-link">In-Org Reference App</a>
+    
+  
+    <strong class="sidebar-title">Hello World App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-base-app.html" class="sidebar-link">Create The App</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-creating-a-component.html" class="sidebar-link">Create The Component</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-embed-in-s1.html" class="sidebar-link">Running In Salesforce1 Mobile</a>
+    
+  
+    <strong class="sidebar-title">Opportunity Select App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-opp-select-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-Connecting-to-SFDC.html" class="sidebar-link">Connecting to SFDC</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-events.html" class="sidebar-link">Creating Events</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-listening-to-events.html" class="sidebar-link">Handling Events</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-styles.html" class="sidebar-link current">Adding Styles</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-embed-in-s1.html" class="sidebar-link">Running In Salesforce1 Mobile</a>
+    
+  
+    <strong class="sidebar-title">Static Resources App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-load-resources.html" class="sidebar-link">Load Dependent Files</a>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-build-the-app.html" class="sidebar-link">Build The App</a>
+    
+  
+    <strong class="sidebar-title">Expense Tracker App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-et-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-appmap.html" class="sidebar-link">App Map</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-expense-object.html" class="sidebar-link">Create An Expense Object</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-1-create-app.html" class="sidebar-link">Create Expense Tracker App</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-2-create-user-input-comp.html" class="sidebar-link">Create User Input Component</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-3-create-apex-expense-model.html" class="sidebar-link">Load Data From Apex Model</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-4-create-nested-components.html" class="sidebar-link">Create Nested Components</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-5-save-expense-to-sfdc.html" class="sidebar-link">Save Expense To SFDC</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-6-make-it-interactive.html" class="sidebar-link">Make It Interactive</a>
+    
+  
+    <strong class="sidebar-title">Mini Hacks</strong>
+    
+      <a href="/auratutorials/tutorials/aura-mini-hacks-temp-converter.html" class="sidebar-link">Temperature Converter</a>
+    
+      <a href="/auratutorials/tutorials/aura-mini-hacks-contacts-context-app.html" class="sidebar-link">Contact Context App</a>
+    
+  
+    <strong class="sidebar-title">Resources</strong>
+    
+      <a href="/auratutorials/tutorials/aura-docs.html" class="sidebar-link">Docs</a>
+    
+      <a href="/auratutorials/tutorials/aura-cheet-sheet.html" class="sidebar-link">Cheet Sheet</a>
+    
+  
+</aside>
+  </div>
+</article>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+       Built using <a href="http://hexo.io" target="_blank">hexo.io</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Site <a href="/tutorials/aura-site-credit.html"> credits</a>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/rajaraodv" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/rajaraodv/auratutorials-site" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+<!-- Swiftype -->
+<script>
+var Swiftype = window.Swiftype || {};
+(function() {
+  Swiftype.key = 'DDvzs7LQ9kdKssQNQLcv';
+
+  /** DO NOT EDIT BELOW THIS LINE **/
+  var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+  script.src = "//s.swiftypecdn.com/embed.js";
+  var entry = document.getElementsByTagName('script')[0];
+  document.getElementsByTagName('script')[0].parentNode.insertBefore(script, entry);
+}());
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/auratutorials/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/auratutorials/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

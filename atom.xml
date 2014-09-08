@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Aura Tutorials]]></title>
+  <subtitle><![CDATA[Aura Tutorials - Build Salesforce Aura apps lightning fast!]]></subtitle>
+  <link href="/auratutorials/atom.xml" rel="self"/>
+  <link href="https://github.com/rajaraodv/auratutorials-site/"/>
+  <updated>2014-09-08T22:23:55.579Z</updated>
+  <id>https://github.com/rajaraodv/auratutorials-site/</id>
+  
+  <author>
+    <name><![CDATA[Raja Rao DV]]></name>
+    <email><![CDATA[rraodv@salesforce.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+</feed>

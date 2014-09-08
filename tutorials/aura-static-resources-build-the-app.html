@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Static Resources App -  Build The App | Aura Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="https://github.com/rajaraodv/auratutorials-site/tutorials/aura-static-resources-build-the-app.html">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/auratutorials/mstile-144x144.png">
+  <link rel="stylesheet" href="/auratutorials/css/style.css" type="text/css">
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/auratutorials/atom.xml" title="Aura Tutorials" type="application/atom+xml">
+  <meta name="description" content="SRCmp.cmp
+
+Open Developer Console.
+Go to New &gt; Aura Component
+Enter Name SRCmp
+Hit Submit
+Click on the Component button in the side panel.
+Paste the following content:
+
+&lt;aura:component&gt;   &lt">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Static Resources App -  Build The App">
+<meta property="og:url" content="https://github.com/rajaraodv/auratutorials-site/auratutorials/tutorials/aura-static-resources-build-the-app.html">
+<meta property="og:site_name" content="Aura Tutorials">
+<meta property="og:description" content="SRCmp.cmp
+
+Open Developer Console.
+Go to New &gt; Aura Component
+Enter Name SRCmp
+Hit Submit
+Click on the Component button in the side panel.
+Paste the following content:
+
+&lt;aura:component&gt;   &lt">
+<meta property="og:image" content="/auratutorials/images/aura-bootstrap-app-final.png">
+<meta property="og:image" content="/auratutorials/images/aura-bootstrap-app-final-dlg.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Static Resources App -  Build The App">
+<meta name="twitter:description" content="SRCmp.cmp
+
+Open Developer Console.
+Go to New &gt; Aura Component
+Enter Name SRCmp
+Hit Submit
+Click on the Component button in the side panel.
+Paste the following content:
+
+&lt;aura:component&gt;   &lt">
+<meta name="twitter:site" content="@rajaraodv">
+<meta property="fb:admins" content="100000247608790">
+
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4910098-10', 'github.com/rajaraodv/auratutorials-site');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <header id="header">
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="/auratutorials//" id="logo">Aura Tutorials</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/" class="main-nav-link">Tutorials</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/aura-docs.html" class="main-nav-link">Docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="/auratutorials/tutorials/aura-cheat-sheet.html" class="main-nav-link">Cheat Sheet</a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        <h1 id="page-title" itemprop="name">Static Resources App -  Build The App</h1>
+        <a href="https://github.com/rajaraodv/auratutorials-site/blob/master/source/tutorials/aura-static-resources-build-the-app.md" title="Improve this doc" id="page-edit-link"></a>
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <div class="toc-wrap">
+        <strong class="toc-title">Contents</strong>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SRCmp-cmp"><span class="toc-number">1.</span> <span class="toc-text">SRCmp.cmp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code_Highlights:"><span class="toc-number">1.1.</span> <span class="toc-text">Code Highlights:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRController-js"><span class="toc-number">2.</span> <span class="toc-text">SRController.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRApp-app"><span class="toc-number">3.</span> <span class="toc-text">SRApp.app</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test_The_App"><span class="toc-number">4.</span> <span class="toc-text">Test The App</span></a></li></ol>
+      </div>
+      <div class="page-entry" itemprop="articleBody">
+        <h2 id="SRCmp-cmp">SRCmp.cmp</h2>
+<ol>
+<li>Open Developer Console.</li>
+<li>Go to New &gt; Aura Component</li>
+<li>Enter Name <code>SRCmp</code></li>
+<li>Hit Submit</li>
+<li>Click on the <code>Component</code> button in the side panel.</li>
+<li>Paste the following content:</li>
+</ol>
+<figure class="highlight html"><pre><div class="line"><span class="tag">&lt;<span class="title">aura:component</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">aura:attribute</span> <span class="attribute">name</span>=<span class="value">"title"</span> <span class="attribute">type</span>=<span class="value">"String"</span> <span class="attribute">default</span>=<span class="value">"Modal"</span>/&gt;</span></div><div class="line">  	</div><div class="line">   <span class="comment">&lt;!-- listen to staticResourcesLoaded and call "initScripts" function inside controller --&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="title">aura:handler</span> <span class="attribute">event</span>=<span class="value">"jam:staticResourcesLoaded"</span> <span class="attribute">action</span>=<span class="value">"{!c.initScripts}"</span>/&gt;</span></div><div class="line">    </div><div class="line">   <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"aotp"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"container"</span>&gt;</span></div><div class="line">         <span class="comment">&lt;!-- Button triggers a modal dialog--&gt;</span>  </div><div class="line">         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row well"</span>&gt;</span>     </div><div class="line">            <span class="tag">&lt;<span class="title">button</span> <span class="attribute">aura:id</span>=<span class="value">"modalToggle"</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary btn-lg"</span>&gt;</span></div><div class="line">            Launch Modal - JavaScript</div><div class="line">            <span class="tag">&lt;/<span class="title">button</span>&gt;</span>            </div><div class="line">         <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">br</span> /&gt;</span></div><div class="line">         <span class="comment">&lt;!-- modal dialog --&gt;</span></div><div class="line">         <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"modal fade"</span> <span class="attribute">aura:id</span>=<span class="value">"modalDlg"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"modal-dialog"</span>&gt;</span></div><div class="line">               <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"modal-content"</span>&gt;</span></div><div class="line">                  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"modal-header"</span>&gt;</span></div><div class="line">                     <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"close"</span> <span class="attribute">data-dismiss</span>=<span class="value">"modal"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">aria-hidden</span>=<span class="value">"true"</span>&gt;</span>&times;<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"sr-only"</span>&gt;</span>Close<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">button</span>&gt;</span></div><div class="line">                     <span class="tag">&lt;<span class="title">h4</span> <span class="attribute">class</span>=<span class="value">"modal-title"</span>&gt;</span>Dialog Title<span class="tag">&lt;/<span class="title">h4</span>&gt;</span></div><div class="line">                  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">                  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"modal-body"</span>&gt;</span></div><div class="line">                     GlobalId = {!globalId}  <span class="tag">&lt;<span class="title">br</span>/&gt;</span> This is Dialog Body</div><div class="line">                  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">                  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"modal-footer"</span>&gt;</span></div><div class="line">                     <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"btn btn-default"</span> <span class="attribute">data-dismiss</span>=<span class="value">"modal"</span>&gt;</span>Close<span class="tag">&lt;/<span class="title">button</span>&gt;</span></div><div class="line">                  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">               <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">               <span class="comment">&lt;!-- /.modal-content --&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- /.modal-dialog --&gt;</span></div><div class="line">         <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">         <span class="comment">&lt;!-- /.modal --&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">   <span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">aura:component</span>&gt;</span></div></pre></figure>
+
+<ol>
+<li><b>Change the namespace “jam” to your org’s namespace</b></li>
+</ol>
+<h3 id="Code_Highlights:">Code Highlights:</h3>
+<ol>
+<li><p><code>&lt;aura:handler event=&quot;jam:staticResourcesLoaded&quot; action=&quot;{!c.initScripts}&quot;/&gt;</code><br>This makes this component listen to <code>jam:staticResourcesLoaded</code> event and call <code>initScripts</code> function in its JavaScript controller.</p>
+</li>
+<li><p>The rest of the code is simply markup to create a Twitter Bootstrap button and a Modal dialog. </p>
+</li>
+<li><p><code>&lt;button aura:id=&quot;modalToggle&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;</code><br><code>aura:id</code> with a value <code>modalToggle</code> makes it easy to find from within component. It is recommended to use <code>aura:id</code> instead of regular <code>id</code> because your app may have multiple components.</p>
+</li>
+</ol>
+<p><br></p>
+<h2 id="SRController-js">SRController.js</h2>
+<ol>
+<li>Open <code>SRCmp.cmp</code>and click on <code>Controller</code> button in the side panel.</li>
+<li>Paste the following code.</li>
+</ol>
+<figure class="highlight javascript"><pre><div class="line">({</div><div class="line">    initScripts: <span class="function"><span class="keyword">function</span><span class="params">(component, event, helper)</span> </span>{</div><div class="line"></div><div class="line">        <span class="comment">//Ignore duplicate notifications that may arrive because other components </span></div><div class="line">        <span class="comment">//loading scripts using the same library. </span></div><div class="line">        <span class="keyword">if</span> (component.alreadyhandledEvent)  </div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        </div><div class="line">            <span class="keyword">var</span> btn = component.find(<span class="string">"modalToggle"</span>).getElement();</div><div class="line">            <span class="keyword">var</span> dlg = component.find(<span class="string">"modalDlg"</span>).getElement();</div><div class="line">            jQuery(btn).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">                jQuery(dlg).modal();</div><div class="line">            });</div><div class="line">            component.alreadyhandledEvent = <span class="literal">true</span>;</div><div class="line">        }</div><div class="line">    }</div><div class="line">})</div></pre></figure>
+
+<blockquote class="note tip"><strong class="note-title">Application-Level Events</strong>
+
+<p>Note: If you are listening to <code>Application level</code> events, you should guard your code from duplicate notifications!</p>
+</blockquote>
+
+
+<p><br></p>
+<h2 id="SRApp-app">SRApp.app</h2>
+<ol>
+<li>Open Developer Console.</li>
+<li>Go to New &gt; Aura Application</li>
+<li>Enter Name <code>SRApp</code></li>
+<li>Hit Submit</li>
+<li>Click on the <code>Application</code> button in the side panel.</li>
+<li>Paste the following content:</li>
+</ol>
+<figure class="highlight html"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">aura:application</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!--</span></div><div class="line">    1. Loads aotp_bootstrap.css from a aotp_bootstrap(zip file) and loads jQuery file (not in zip file; notice "sfjs" extension)</div><div class="line">  in parallel.</div><div class="line">    And then loads bootstrap.js from aotp_bootstrap(zip file) as bootstrap.js is dependent on jQuery.</div><div class="line">  --&gt;</div><div class="line">  <span class="tag">&lt;<span class="title">jam:load</span></span></div><div class="line">    <span class="attribute">filesInParallel</span>=<span class="value">"/resource/aotp_bootstrap/css/aotp_bootstrap.css,/resource/jquery.sfjs"</span></div><div class="line">    <span class="attribute">filesInSeries</span>=<span class="value">"/resource/aotp_bootstrap/js/bootstrap.js"</span></div><div class="line">  /&gt;</div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>1st copy of the component<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">NAMESPACE:SRCmp</span>/&gt;</span></div><div class="line">    </div><div class="line">  <span class="tag">&lt;<span class="title">div</span>&gt;</span>2nd copy of the component<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="title">NAMESPACE:SRCmp</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">aura:application</span>&gt;</span></div></pre></figure>
+
+<h2 id="Test_The_App">Test The App</h2>
+<ol>
+<li>Click on the convenient “Preview” button on the side bar to open up the app - You should see Twitter Bootstrap theme.</li>
+<li>Click on the button and you should see a modal dialog triggered by jQuery.</li>
+<li>Since we are guarding against multiple notifications, both buttons should work normally.</li>
+</ol>
+<p><img src="/auratutorials/images/aura-bootstrap-app-final.png"><br><br><br><img src="/auratutorials/images/aura-bootstrap-app-final-dlg.png"></p>
+
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2014-09-02T05:16:27.000Z" itemprop="dateModified">Last updated: Sep 1 2014</time>
+        <a href="aura-static-resources-load-resources.html" id="page-footer-prev" title="Load Dependent Files">Prev</a><a href="aura-et-overview.html" id="page-footer-next" title="Overview">Next</a>
+      </footer>
+      
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+    </div>
+    <aside id="sidebar">
+  
+    <strong class="sidebar-title">Intro to Aura</strong>
+    
+      <a href="/auratutorials/tutorials/index.html" class="sidebar-link">What is Aura</a>
+    
+      <a href="/auratutorials/tutorials/aura-setup.html" class="sidebar-link">Setup</a>
+    
+      <a href="/auratutorials/tutorials/aura-in-org-reference.html" class="sidebar-link">In-Org Reference App</a>
+    
+  
+    <strong class="sidebar-title">Hello World App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-base-app.html" class="sidebar-link">Create The App</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-creating-a-component.html" class="sidebar-link">Create The Component</a>
+    
+      <a href="/auratutorials/tutorials/aura-hello-world-embed-in-s1.html" class="sidebar-link">Running In Salesforce1 Mobile</a>
+    
+  
+    <strong class="sidebar-title">Opportunity Select App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-opp-select-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-Connecting-to-SFDC.html" class="sidebar-link">Connecting to SFDC</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-events.html" class="sidebar-link">Creating Events</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-listening-to-events.html" class="sidebar-link">Handling Events</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-styles.html" class="sidebar-link">Adding Styles</a>
+    
+      <a href="/auratutorials/tutorials/aura-opp-embed-in-s1.html" class="sidebar-link">Running In Salesforce1 Mobile</a>
+    
+  
+    <strong class="sidebar-title">Static Resources App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-load-resources.html" class="sidebar-link">Load Dependent Files</a>
+    
+      <a href="/auratutorials/tutorials/aura-static-resources-build-the-app.html" class="sidebar-link current">Build The App</a>
+    
+  
+    <strong class="sidebar-title">Expense Tracker App</strong>
+    
+      <a href="/auratutorials/tutorials/aura-et-overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-appmap.html" class="sidebar-link">App Map</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-expense-object.html" class="sidebar-link">Create An Expense Object</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-1-create-app.html" class="sidebar-link">Create Expense Tracker App</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-2-create-user-input-comp.html" class="sidebar-link">Create User Input Component</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-3-create-apex-expense-model.html" class="sidebar-link">Load Data From Apex Model</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-4-create-nested-components.html" class="sidebar-link">Create Nested Components</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-5-save-expense-to-sfdc.html" class="sidebar-link">Save Expense To SFDC</a>
+    
+      <a href="/auratutorials/tutorials/aura-et-6-make-it-interactive.html" class="sidebar-link">Make It Interactive</a>
+    
+  
+    <strong class="sidebar-title">Mini Hacks</strong>
+    
+      <a href="/auratutorials/tutorials/aura-mini-hacks-temp-converter.html" class="sidebar-link">Temperature Converter</a>
+    
+      <a href="/auratutorials/tutorials/aura-mini-hacks-contacts-context-app.html" class="sidebar-link">Contact Context App</a>
+    
+  
+    <strong class="sidebar-title">Resources</strong>
+    
+      <a href="/auratutorials/tutorials/aura-docs.html" class="sidebar-link">Docs</a>
+    
+      <a href="/auratutorials/tutorials/aura-cheet-sheet.html" class="sidebar-link">Cheet Sheet</a>
+    
+  
+</aside>
+  </div>
+</article>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+       Built using <a href="http://hexo.io" target="_blank">hexo.io</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Site <a href="/tutorials/aura-site-credit.html"> credits</a>
+      </div>
+      <div id="footer-links">
+        <a href="https://twitter.com/rajaraodv" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="https://github.com/rajaraodv/auratutorials-site" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+<!-- Swiftype -->
+<script>
+var Swiftype = window.Swiftype || {};
+(function() {
+  Swiftype.key = 'DDvzs7LQ9kdKssQNQLcv';
+
+  /** DO NOT EDIT BELOW THIS LINE **/
+  var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+  script.src = "//s.swiftypecdn.com/embed.js";
+  var entry = document.getElementsByTagName('script')[0];
+  document.getElementsByTagName('script')[0].parentNode.insertBefore(script, entry);
+}());
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/auratutorials/js/retina.min.js" type="text/javascript"></script>
+
+<script src="/auratutorials/js/script.js" type="text/javascript"></script>
+
+<!-- Google+ -->
+<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>
